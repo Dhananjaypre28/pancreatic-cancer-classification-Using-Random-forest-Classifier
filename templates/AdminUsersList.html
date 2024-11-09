@@ -1,0 +1,40 @@
+<!-- AdminUsersList.html -->
+
+{% extends 'AdminBase.html' %}
+
+{% block title %}
+    Users List - Pancreatic cancer
+{% endblock %}
+
+{% block content %}
+    <h1>Users List</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user[0] }}</td>
+                    <td>{{ user[1] }}</td>
+                    <td>{{ user[2] }}</td>
+                    <td>{{ user[3] }}</td>
+                    <td>
+                        <form action="{{ url_for('delete_user', user_id=user[0]) }}" method="post" style="display:inline;">
+                          <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                      </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up - Pancretic{% endblock %}
+
+{% block content %}
+<div class="card mx-auto" style="max-width: 400px;">
+    <div class="card-body">
+        <h5 class="card-title">Create an Account</h5>
+        {% if msg %}
+            <div class="alert alert-success" role="alert">
+                {{ msg }}
+            </div>
+        {% endif %}
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password</label>
+                <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile</label>
+                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter Mobile">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

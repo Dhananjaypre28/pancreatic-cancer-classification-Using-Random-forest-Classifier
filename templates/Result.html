@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Detection Result - Pancreatic cancer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Pancreatic Cancer Detection Result</div>
+
+                <div class="card-body">
+                    <h5 class="card-title">Diagnosis:</h5>
+                    <p class="card-text">{{ diagnosis }}</p>
+                    <a href="/detection" class="btn btn-primary">Back to Detection</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

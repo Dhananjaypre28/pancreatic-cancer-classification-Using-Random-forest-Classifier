@@ -1,0 +1,45 @@
+{% extends "UserBase.html" %}
+
+{% block title %}Pancreatic Cancer Detection - Pancreatic cancer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Pancreatic Cancer Detection</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('detection') }}">
+                        <div class="form-group">
+                            <label for="plasma_CA19_9">Plasma CA19-9:</label>
+                            <input type="number" class="form-control" id="plasma_CA19_9" name="plasma_CA19_9" step="any" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="creatinine">Creatinine:</label>
+                            <input type="number" class="form-control" id="creatinine" name="creatinine" step="any" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="LYVE1">LYVE1:</label>
+                            <input type="number" class="form-control" id="LYVE1" name="LYVE1" step="any" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="REG1B">REG1B:</label>
+                            <input type="number" class="form-control" id="REG1B" name="REG1B" step="any" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="TFF1">TFF1:</label>
+                            <input type="number" class="form-control" id="TFF1" name="TFF1" step="any" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="REG1A">REG1A:</label>
+                            <input type="number" class="form-control" id="REG1A" name="REG1A" step="any" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Detect Pancreatic Cancer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
